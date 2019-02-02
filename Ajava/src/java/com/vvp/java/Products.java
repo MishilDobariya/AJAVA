@@ -83,7 +83,7 @@ public class Products {
     static HashMap<Integer,Products> products = new HashMap<Integer, Products>();
     
     public static void initData(){
-        Products p1 = new Products(1,5,800.00,"Book");
+        Products p1 = new Products(1,8,800.00,"Book");
         Products p2 = new Products(2,5,10.00,"Pen");
         
         products.put(new Integer(1), p1);

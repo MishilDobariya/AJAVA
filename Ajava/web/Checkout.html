@@ -11,15 +11,32 @@
   </head>
   <body>
     <form action="checkout.do" method="post">
-        Name:<input type="text" name="name">
-    Address: <textarea></textarea>
-    Contact No: <input type="number" name="number">
-        <input type="radio" name="pm" value="cod" id="pmm">
-        <label for="pmm">COD</label>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>Contact No:</td>
+                <td><input type="number" name="number"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="radio" name="pm" value="cod" id="pmm">
+                    <label for="pmm">COD</label>
         
-        <input type="radio" name="pm" value="net" id="pmm1">
-        <label for="pmm1">Net Banking</label>
-        
-        <input type="submit" name="submit" value="submit">
+                    <input type="radio" name="pm" value="net" id="pmm1">
+                    <label for="pmm1">Net Banking</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="submit"></td>
+            </tr>
+        </table>
+  </form>
   </body>
 </html>

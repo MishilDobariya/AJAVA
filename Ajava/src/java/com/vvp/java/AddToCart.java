@@ -33,11 +33,12 @@ public class AddToCart extends HttpServlet {
             int pid = Integer.parseInt(request.getParameter("pid"));
             int qty = Integer.parseInt(request.getParameter("qty"));
             
-            if(session.getAttribute("cart")==null)
+            if(session.getAttribute("cart")==null){
                 cartObj = new ArrayList();
-            else
+            }
+            else{
                 cartObj = (ArrayList)session.getAttribute("cart");
-            
+            }            
             SelectedProduct sp = new SelectedProduct(pid, qty);
             cartObj.add(sp);
             session.setAttribute("cart", cartObj);

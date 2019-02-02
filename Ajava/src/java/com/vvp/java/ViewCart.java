@@ -42,18 +42,10 @@ public class ViewCart extends HttpServlet {
                out.println("<table border='1'>" +
                             "<tr>" +
                             "<th>" + "sr no" + "</th>");
-               out.println("<table border='1'>" +
-                            "<tr>" +
-                            "<th>" + "Product Name"+ "</th>");
-               out.println("<table border='1'>" +
-                            "<tr>" +
-                            "<th>" + "Quantity" + "</th>");
-               out.println("<table border='1'>" +
-                            "<tr>" +
-                            "<th>" + "Price" + "</th>");
-               out.println("<table border='1'>" +
-                            "<tr>" +
-                            "<th>" + "Sub Total" + "</th>");
+               out.println("<th>" + "Product Name"+ "</th>");
+               out.println("<th>" + "Quantity" + "</th>");
+               out.println("<th>" + "Price" + "</th>");
+               out.println("<th>" + "Sub Total" + "</th>");
                for(int i=0;i<cartObj.size();i++){
                    SelectedProduct temp = (SelectedProduct)cartObj.get(i);
                    Products p = (Products)Products.products.get(new Integer(temp.pid));
@@ -68,9 +60,12 @@ public class ViewCart extends HttpServlet {
                    out.println("<td>" + price + "</td>");
                    out.println("<td>" + subTotal + "</td>");
                    grandTotal += subTotal;
+                   out.println("</tr>");
                }
                out.println("</table>");
-               out.println("<div style='float:right'>" + grandTotal + "</div>");
+               out.println("<div style='float:right; margin-right:76%;'>" + grandTotal + "</div>");
+               out.println("<br/><br/>");
+               out.println("<div style='float:right; margin-right:76%;'>"+"<a href='Checkout.html'>Checkout</a>"+"</div>");
            }
         } finally { 
             out.close();

@@ -44,14 +44,21 @@ public class Checkout extends HttpServlet {
                        Products p = (Products)Products.products.get(new Integer(temp.pid));
                        
                        p.stock = p.stock-temp.qty;
+                       if(p.stock<0){
+                           p.stock += temp.qty;
+                           out.println(p.getProductName()+":only "+p.stock+" Products are available");
+                       }
+                       else{
+                           out.print(p.getProductName()+" Done....");
+                       }
                        Products.products.put(new Integer(temp.pid),p);
-                       
-                                              
                    }
+                   
                }
            }
            else
                out.println("Coming soon..");
+           
            
            session.removeAttribute("cart");
         } finally { 
